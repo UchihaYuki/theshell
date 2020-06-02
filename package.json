@@ -9,6 +9,7 @@
     "test": "gulp test",
     "build-src": "gulp build:src",
     "build-test": "gulp build:test",
+    "debug-test": "gulp debug:test",
     "init-git": "node init-git.js"
   },
   "author": "",

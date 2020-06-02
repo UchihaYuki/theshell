@@ -20,7 +20,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "preLaunchTask": "npm: build-test",
+            "preLaunchTask": "npm: debug-test",
             "sourceMaps": true,
             "outFiles": ["${workspaceFolder}/test/**/*.js"]
         }

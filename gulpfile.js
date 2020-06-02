@@ -47,6 +47,7 @@ gulp.task("git-push", (cb) => {
     exec("push.cmd", cb)
 })
 
+gulp.task("debug:test", gulp.series("clean", "build:src", "build:test"));
 gulp.task("test", gulp.series("clean", "build:src", "build:test", "run:test"));
 gulp.task("prepublish", gulp.series("test", "build:src-release", "git-push"));
 
