@@ -6,14 +6,11 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "prepublishOnly": "gulp prepublish",
-    "test": "gulp test",
-    "build-src": "gulp build:src",
-    "build-test": "gulp build:test",
-    "debug-test": "gulp debug:test",
-    "init-git": "node init-git.js"
+    "test": "gulp test"
   },
   "author": "",
   "license": "ISC",
+  "dependencies": {},
   "devDependencies": {
     "@types/chai": "^4.2.7",
     "@types/mocha": "^5.2.7",
@@ -25,7 +22,8 @@
     "gulp-typescript": "^6.0.0-alpha.1",
     "mocha": "^6.2.2",
     "shelljs": "^0.8.3",
-    "typescript": "^3.7.4"
+    "typescript": "^3.7.4",
+    "yargs": "^16.0.3"
   },
   "files": [
     "lib",

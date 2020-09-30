@@ -18,9 +18,10 @@
             ],
             "internalConsoleOptions": "openOnSessionStart",
             "skipFiles": [
-                "<node_internals>/**"
+                "<node_internals>/**",
+                "${workspaceFolder}/node_modules/**"
             ],
-            "preLaunchTask": "npm: debug-test",
+            "preLaunchTask": "gulp: debug:test",
             "sourceMaps": true,
             "outFiles": ["${workspaceFolder}/test/**/*.js"]
         }
