@@ -3,8 +3,15 @@
     "target": "es5",
     "noImplicitAny": true,
     "module": "commonjs",
+    "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "importHelpers": true,
-  }
+    "baseUrl": "./",
+    "paths": {
+      "theshell": [
+        "src/index"
+      ]
+    }
+  },
 }
