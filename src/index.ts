@@ -21,10 +21,7 @@ export function shell(command: string, cb_options?: SpawnOptions | ShellCallback
             return spawnSync(command, so)
         }
 
-        const child = spawn(command, {
-            shell: true,
-            stdio: 'inherit'
-        });
+        const child = spawn(command, so);
         child.on('exit', cb_options)
         return;
     }
@@ -32,4 +29,23 @@ export function shell(command: string, cb_options?: SpawnOptions | ShellCallback
     Object.assign(so, cb_options)
     const child = spawn(command, so);
     child.on('exit', cb)
+}
+
+export function shellAsync(command: string, options?: SpawnOptions) {
+    return new Promise((resolve, reject) => {
+        const so = {
+            shell: true,
+            stdio: 'inherit'
+        } as SpawnOptions;
+
+        if (options) {
+            Object.assign(so, options)
+        }
+
+        const child = spawn(command, so);
+        child.on('exit', (code: number | null, signal: NodeJS.Signals | null) => {
+            if (code) return reject(code)
+            return resolve()
+        })
+    })
 }

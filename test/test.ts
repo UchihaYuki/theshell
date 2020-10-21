@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import { shell } from '../src/index';
+import { shell, shellAsync } from '../src/index';
 
 describe("shell", function() {
 
@@ -28,4 +28,13 @@ describe("shell", function() {
     });
 
 
+});
+
+describe("Async", function() {
+
+    it("function shellAsync(command: string, options?: SpawnOptions)", () => shellAsync('bash -c "ls"'));
+    
+    it("function shellAsync(command: string, options?: SpawnOptions)", () => shellAsync('bash -c "ls"', {
+        cwd: "src"
+    }));
 });
